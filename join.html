@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join the Community — Ford Legacy Group</title>
+</head>
+<body>
+<style>
+:root{
+  --bg:#0b0b0a; --surface:#141412; --line:rgba(176,141,62,.24);
+  --gold:#b08d3e; --gold-hi:#e9c874;
+  --ink:#d8d3c7; --head:#f4f1ea; --muted:#b8b2a3; --faint:#8a8474;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.wrap{max-width:640px;margin:0 auto;padding:0 24px}
+.hero{text-align:center;padding:72px 0 36px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(760px 420px at 50% 0%,rgba(176,141,62,.16),transparent 70%);pointer-events:none}
+.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:clamp(30px,5vw,42px);color:var(--head);margin-bottom:12px;letter-spacing:-.5px}
+.hero h1 em{color:var(--gold-hi)}
+.lede{color:var(--muted);font-size:16.5px;max-width:32em;margin:0 auto}
+.form-card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:14px;padding:40px 36px;margin:8px auto 56px;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.nl-form{display:flex;flex-direction:column;gap:16px}
+.nl-form label{display:block;font-size:12px;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:6px}
+.nl-form input{background:#0b0b0a;border:1px solid var(--line);color:var(--head);font-size:16px;padding:14px 16px;border-radius:6px;width:100%;font-family:inherit;height:56px}
+.nl-form input::placeholder{color:var(--faint)}
+.nl-form input:focus{outline:none;border-color:var(--gold)}
+.btn{display:block;width:100%;text-align:center;cursor:pointer;border:0;font-family:inherit;font-size:17px;font-weight:700;letter-spacing:.4px;padding:17px 30px;border-radius:6px;background:var(--gold);color:#0b0b0a;margin-top:8px;transition:transform .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-2px);background:#c49c4b}
+.success{display:none;text-align:center;padding:20px 0}
+.success h2{font-family:Georgia,serif;font-weight:400;font-size:28px;color:var(--head);margin-bottom:10px}
+.success h2 em{color:var(--gold-hi)}
+.success p{color:var(--muted);font-size:16px}
+.site-footer{text-align:center;padding:0 0 48px;font-size:13px;color:var(--faint)}
+.site-footer .tag{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:700;margin-bottom:8px}
+@media(max-width:560px){.form-card{padding:32px 24px}}
+</style>
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">FORD LEGACY GROUP</p>
+    <h1 class="serif">Join the <em>Community</em></h1>
+    <p class="lede">Members get exclusive access to leading technology, training, and tools to diversify income, private mentorship from top earners, and a clear, guided path to accelerate the journey &mdash; plus team trips and retreats.</p>
+  </div>
+</div>
+<div class="wrap">
+  <div class="form-card">
+    <form class="nl-form" id="nl-form">
+      <div>
+        <label for="nl-name">FULL NAME</label>
+        <input type="text" id="nl-name" name="entry.2124269328" placeholder="Your full name" required autocomplete="name">
+      </div>
+      <div>
+        <label for="nl-email">EMAIL</label>
+        <input type="email" id="nl-email" name="entry.131923027" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <button class="btn" type="submit">Join Now</button>
+    </form>
+    <div class="success" id="nl-success">
+      <p class="eyebrow">FORD LEGACY GROUP</p>
+      <h2 class="serif">Welcome to the <em>Community</em></h2>
+      <p>You&rsquo;re in! You&rsquo;re now part of the Ford Legacy Group community &mdash; watch your inbox for what&rsquo;s next.</p>
+    </div>
+  </div>
+</div>
+<div class="site-footer">
+  <div class="tag">BUILD &bull; EDUCATE &bull; EMPOWER</div>
+  <div>&copy; 2026 Ford Legacy Group</div>
+</div>
+<script>
+(function(){
+  var form=document.getElementById('nl-form');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var data=new FormData(form);
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSc4EDCTYqXhHFjXGNEmYRzXWArkNALe602-qZTnljo8DJRe6w/formResponse',{method:'POST',mode:'no-cors',body:data})
+    .then(showSuccess).catch(showSuccess);
+    function showSuccess(){
+      form.style.display='none';
+      document.getElementById('nl-success').style.display='block';
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
