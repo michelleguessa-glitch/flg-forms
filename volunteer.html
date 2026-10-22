@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volunteer — Ford Legacy Group</title>
+</head>
+<body>
+<style>
+:root{
+  --bg:#0b0b0a; --surface:#141412; --line:rgba(176,141,62,.24);
+  --gold:#b08d3e; --gold-hi:#e9c874;
+  --ink:#d8d3c7; --head:#f4f1ea; --muted:#b8b2a3; --faint:#8a8474;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+.hero{text-align:center;padding:64px 0 36px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:560px;height:280px;background:radial-gradient(closest-side,rgba(176,141,62,.16),transparent);pointer-events:none}
+.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:clamp(30px,5vw,42px);color:var(--head);margin-bottom:12px;letter-spacing:-.5px}
+.hero h1 em{color:var(--gold-hi)}
+.lede{color:var(--muted);font-size:16.5px;max-width:34em;margin:0 auto}
+.form-card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:14px;padding:40px 36px;margin:8px auto 56px;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.vol-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vol-form .full{grid-column:1/-1}
+.vol-form label{display:block;font-size:12px;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:6px}
+.vol-form input{background:#0b0b0a;border:1px solid var(--line);color:var(--head);font-size:16px;padding:14px 16px;border-radius:6px;width:100%;font-family:inherit}
+.vol-form input::placeholder{color:var(--faint)}
+.vol-form input:focus{outline:none;border-color:var(--gold)}
+.btn{display:block;width:100%;text-align:center;cursor:pointer;border:0;font-family:inherit;font-size:17px;font-weight:700;letter-spacing:.4px;padding:17px 30px;border-radius:6px;background:var(--gold);color:#0b0b0a;grid-column:1/-1;margin-top:8px;transition:transform .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-2px);background:#c49c4b}
+.success{display:none;text-align:center;padding:20px 0}
+.success h2{font-family:Georgia,serif;font-weight:400;font-size:28px;color:var(--head);margin-bottom:10px}
+.success p{color:var(--muted);font-size:16px}
+.site-footer{text-align:center;padding:0 0 48px;font-size:13px;color:var(--faint)}
+.site-footer .tag{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:700;margin-bottom:8px}
+@media(max-width:560px){.vol-form{grid-template-columns:1fr}.form-card{padding:32px 24px}}
+</style>
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">FLG GIVES &bull; VOLUNTEER</p>
+    <h1 class="serif">Lend a <em>Hand</em> This Holiday Season</h1>
+    <p class="lede">From sorting donations to helping on distribution days, volunteers are the heart of FLG Serve. Fill out the form below and we&rsquo;ll be in touch with ways you can help.</p>
+  </div>
+</div>
+<div class="wrap">
+  <div class="form-card">
+    <form class="vol-form" id="vol-form">
+      <div class="full">
+        <label for="vf-name">FULL NAME</label>
+        <input type="text" id="vf-name" name="entry.749350284" placeholder="Your full name" required autocomplete="name">
+      </div>
+      <div>
+        <label for="vf-city">CITY</label>
+        <input type="text" id="vf-city" name="entry.1666400035" placeholder="City" required autocomplete="address-level2">
+      </div>
+      <div>
+        <label for="vf-state">STATE</label>
+        <input type="text" id="vf-state" name="entry.1386008432" placeholder="State" required autocomplete="address-level1">
+      </div>
+      <div class="full">
+        <label for="vf-email">EMAIL</label>
+        <input type="email" id="vf-email" name="entry.363937650" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div class="full">
+        <label for="vf-phone">PHONE</label>
+        <input type="tel" id="vf-phone" name="entry.1214149236" placeholder="(555) 123-4567" required autocomplete="tel">
+      </div>
+      <button class="btn" type="submit">Sign Up to Volunteer</button>
+    </form>
+    <div class="success" id="vol-success">
+      <h2 class="serif">Thank You!</h2>
+      <p>We&rsquo;ve received your info and will be in touch soon with volunteer opportunities.</p>
+    </div>
+  </div>
+</div>
+<div class="site-footer">
+  <div class="tag">BUILD &bull; EDUCATE &bull; EMPOWER</div>
+  <div>&copy; 2026 Ford Legacy Group</div>
+</div>
+<script>
+(function(){
+  var form=document.getElementById('vol-form');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var data=new FormData(form);
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLScrzQRpoySMl3NdZqKPQ4x23FG8rmpZsqlo0HKnaFWzF5qNUA/formResponse',{method:'POST',mode:'no-cors',body:data})
+    .then(showSuccess).catch(showSuccess);
+    function showSuccess(){
+      form.style.display='none';
+      document.getElementById('vol-success').style.display='block';
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

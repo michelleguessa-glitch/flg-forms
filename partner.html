@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partner With Us — Ford Legacy Group</title>
+</head>
+<body>
+<style>
+:root{
+  --bg:#0b0b0a; --surface:#141412; --line:rgba(176,141,62,.24);
+  --gold:#b08d3e; --gold-hi:#e9c874;
+  --ink:#d8d3c7; --head:#f4f1ea; --muted:#b8b2a3; --faint:#8a8474;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+.hero{text-align:center;padding:64px 0 36px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:560px;height:280px;background:radial-gradient(closest-side,rgba(176,141,62,.16),transparent);pointer-events:none}
+.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:700;margin-bottom:14px}
+.hero h1{font-size:clamp(30px,5vw,42px);color:var(--head);margin-bottom:12px;letter-spacing:-.5px}
+.hero h1 em{color:var(--gold-hi)}
+.lede{color:var(--muted);font-size:16.5px;max-width:34em;margin:0 auto}
+.form-card{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:14px;padding:40px 36px;margin:8px auto 56px;box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.pt-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pt-form .full{grid-column:1/-1}
+.pt-form label{display:block;font-size:12px;letter-spacing:1.5px;color:var(--gold);font-weight:700;margin-bottom:6px}
+.pt-form input,.pt-form textarea{background:#0b0b0a;border:1px solid var(--line);color:var(--head);font-size:16px;padding:14px 16px;border-radius:6px;width:100%;font-family:inherit}
+.pt-form input::placeholder,.pt-form textarea::placeholder{color:var(--faint)}
+.pt-form input:focus,.pt-form textarea:focus{outline:none;border-color:var(--gold)}
+.pt-opts{display:flex;flex-wrap:wrap;gap:10px 22px;padding-top:4px}
+.pt-opts label{display:inline-flex;align-items:center;gap:8px;font-size:15px;letter-spacing:0;color:var(--ink);font-weight:400;margin-bottom:0;text-transform:none}
+.pt-opts input{width:auto;padding:0;accent-color:var(--gold)}
+.btn{display:block;width:100%;text-align:center;cursor:pointer;border:0;font-family:inherit;font-size:17px;font-weight:700;letter-spacing:.4px;padding:17px 30px;border-radius:6px;background:var(--gold);color:#0b0b0a;grid-column:1/-1;margin-top:8px;transition:transform .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-2px);background:#c49c4b}
+.pt-err{display:none;grid-column:1/-1;background:rgba(176,65,62,.14);border:1px solid #b0413e;color:#f0b8b4;border-radius:6px;padding:13px 16px;font-size:15px}
+.success{display:none;text-align:center;padding:20px 0}
+.success h2{font-family:Georgia,serif;font-weight:400;font-size:28px;color:var(--head);margin-bottom:10px}
+.success h2 em{color:var(--gold-hi)}
+.success p{color:var(--muted);font-size:16px}
+.site-footer{text-align:center;padding:0 0 48px;font-size:13px;color:var(--faint)}
+.site-footer .tag{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:700;margin-bottom:8px}
+@media(max-width:560px){.pt-form{grid-template-columns:1fr}.form-card{padding:32px 24px}}
+</style>
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">FLG SERVE &bull; PARTNER &mdash; TEST PAGE</p>
+    <h1 class="serif">Partner With <em>Us</em></h1>
+    <p class="lede">Join Ford Legacy Group in the 1st Annual Holiday + Winter Drive. Host a drop-off location, donate items, or sponsor the drive &mdash; tell us how you&rsquo;d like to help and we&rsquo;ll follow up with next steps.</p>
+  </div>
+</div>
+<div class="wrap">
+  <div class="form-card">
+    <form class="pt-form" id="pt-form">
+      <div class="full">
+        <label for="pt-biz">BUSINESS OR ORGANIZATION NAME *</label>
+        <input type="text" id="pt-biz" name="entry.1127131855" placeholder="Business or organization name" required autocomplete="organization">
+      </div>
+      <div class="full">
+        <label for="pt-contact">CONTACT NAME *</label>
+        <input type="text" id="pt-contact" name="entry.79706398" placeholder="Your full name" required autocomplete="name">
+      </div>
+      <div>
+        <label for="pt-email">EMAIL ADDRESS *</label>
+        <input type="email" id="pt-email" name="entry.166188793" placeholder="you@example.com" required autocomplete="email">
+      </div>
+      <div>
+        <label for="pt-phone">PHONE NUMBER *</label>
+        <input type="tel" id="pt-phone" name="entry.148099516" placeholder="(555) 123-4567" required autocomplete="tel">
+      </div>
+      <div class="full">
+        <label for="pt-address">BUSINESS ADDRESS</label>
+        <input type="text" id="pt-address" name="entry.646839211" placeholder="Street address" autocomplete="street-address">
+      </div>
+      <div class="full">
+        <label>CITY *</label>
+        <div class="pt-opts">
+          <label><input type="radio" name="entry.514553774" value="Orlando" required>Orlando</label>
+          <label><input type="radio" name="entry.514553774" value="West Palm Beach">West Palm Beach</label>
+          <label><input type="radio" name="entry.514553774" value="Other">Other</label>
+        </div>
+      </div>
+      <div class="full">
+        <label>HOW WOULD YOU LIKE TO PARTNER? *</label>
+        <div class="pt-opts">
+          <label><input type="checkbox" name="entry.682267917" value="Host a drop-off location">Host a drop-off location</label>
+          <label><input type="checkbox" name="entry.682267917" value="Donate items">Donate items</label>
+          <label><input type="checkbox" name="entry.682267917" value="Sponsor the drive">Sponsor the drive</label>
+          <label><input type="checkbox" name="entry.682267917" value="Other (tell us below)">Other (tell us below)</label>
+        </div>
+      </div>
+      <div class="full">
+        <label for="pt-notes">ANYTHING ELSE WE SHOULD KNOW?</label>
+        <textarea id="pt-notes" name="entry.570780172" rows="4" placeholder="Anything else we should know?"></textarea>
+      </div>
+      <div class="pt-err" id="pt-err"></div>
+      <button class="btn" type="submit" id="pt-submit">Sign Up to Partner</button>
+    </form>
+    <div class="success" id="pt-success">
+      <h2 class="serif">Thank You for <em>Partnering With Us</em></h2>
+      <p>We&rsquo;ve received your sign-up. A member of the Ford Legacy Group team will follow up with next steps shortly.</p>
+      <a class="btn" href="https://www.fordlegacygroup.com/flgserve" style="text-decoration:none;max-width:340px;margin:24px auto 0">Return to FLG Serve</a>
+    </div>
+  </div>
+</div>
+<div class="site-footer">
+  <div class="tag">BUILD &bull; EDUCATE &bull; EMPOWER</div>
+  <div>&copy; 2026 Ford Legacy Group</div>
+</div>
+<script>
+(function(){
+  var form=document.getElementById('pt-form');
+  var sending=false;
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if (sending) return;
+    var eb=document.getElementById('pt-err');
+    var hows=form.querySelectorAll('input[name="entry.682267917"]:checked');
+    if (!hows.length){
+      eb.style.display='block';
+      eb.textContent='Please complete: how you would like to partner.';
+      eb.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    eb.style.display='none';
+    sending=true;
+    var btn=document.getElementById('pt-submit');
+    var orig=btn.textContent;
+    btn.textContent='Submitting...';
+    btn.disabled=true;
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSczSWIl7TCwSBpXu8UUVf70MDnH4LQy8z4NpyIC9orfngf2Eg/formResponse',{method:'POST',mode:'no-cors',body:new FormData(form)})
+    .then(function(){
+      form.style.display='none';
+      document.getElementById('pt-success').style.display='block';
+      window.scrollTo({top:0,behavior:'smooth'});
+    }, function(){
+      sending=false;
+      btn.disabled=false;
+      btn.textContent=orig;
+      eb.style.display='block';
+      eb.textContent='Something went wrong sending your sign-up. Please try again.';
+      eb.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
